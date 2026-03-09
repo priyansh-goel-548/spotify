@@ -1,5 +1,5 @@
 import {router} from "express"
-import {createMusic} from "../controllers/music.controller"
+import {createAlbum, createMusic} from "../controllers/music.controller"
 import multer from "multer"
 
 const upload = multer ({
@@ -8,6 +8,7 @@ const upload = multer ({
 
 const router = Router();
 router.post("/upload", upload.single("music"), createMusic)
+router.route("/album").post(createAlbum);
 
 
 export default router;
