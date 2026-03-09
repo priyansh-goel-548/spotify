@@ -1,6 +1,8 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import router from "./routes/auth.routes";
+import authRouter from "./routes/auth.routes";
+import musicRoutes from "./routes/music.routes" 
+
 
 const app = express();
 app.get('/', (req, res) => {
@@ -8,6 +10,8 @@ app.get('/', (req, res) => {
 });
 app.use(express.json());
 app.use(cookieParser());
-app.use('.api/auth', router)
+app.use('.api/auth', authRouter)
+app.use('/api/music', musicRoutes);
+
 
 export default app;
