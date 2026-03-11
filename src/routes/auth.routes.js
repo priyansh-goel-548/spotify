@@ -36,5 +36,5 @@ router.route("/change-current-password").post(verifyJWT, changeCurrentPassword);
 router.route("/change-user").get(verifyJWT, getCurrentUser);
 router.route("/update-account-details").patch(verifyJWT, updateAccountDetails);
 router.route("/C/:username").get(verifyJWT, getUserChannelProfile);
-
+ 
 export default router;
